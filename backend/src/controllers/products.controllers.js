@@ -18,8 +18,16 @@ const newProduct = async (req, res) => {
   return res.status(httpStatus(status)).json(products);
 };
 
+const updateProduct = async (req, res) => {
+  const { name } = req.body;
+  const { id } = req.params;
+  const { status, data } = await productsServices.updateProduct(name, id);
+  return res.status(httpStatus(status)).json(data);
+};
+
 module.exports = {
   getAll,
   findById,
   newProduct,
+  updateProduct,
 };

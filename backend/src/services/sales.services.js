@@ -19,7 +19,7 @@ const newSale = async (obj) => {
 };
 
 module.exports = {
-    getAll,
-    findById,
-    newSale,
+  getAll,
+  findById,
+  newSale,
 };

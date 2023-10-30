@@ -40,10 +40,10 @@ const newSale = async (obj) => {
   const [sale] = await connection.execute('INSERT INTO sales (date) VALUES (NOW())');
   const saleProductData = obj.map(async ({ productId, quantity }) => {
     await connection
-    .execute(
-      'INSERT INTO sales_products (sale_id, product_id, quantity) VALUES(?, ?, ?)',
-      [sale.insertId, productId, quantity],
-    ); 
+      .execute(
+        'INSERT INTO sales_products (sale_id, product_id, quantity) VALUES(?, ?, ?)',
+        [sale.insertId, productId, quantity],
+      ); 
   });
   Promise.all(saleProductData);
   console.log(Promise.all(saleProductData));
