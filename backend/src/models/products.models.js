@@ -29,7 +29,7 @@ const updateProduct = async (name, id) => {
     [name, id],
   );
   console.log(product);
-  return { id: parseInt(id, 10), name };
+  return { id: Number(id, 10), name };
 }; 
 
 module.exports = {
