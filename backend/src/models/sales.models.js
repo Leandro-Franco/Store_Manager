@@ -46,7 +46,7 @@ const newSale = async (obj) => {
       ); 
   });
   Promise.all(saleProductData);
-  return { id: sale.insertId, intemsSold: obj };
+  return { id: sale.insertId, itemsSold: obj };
 };
 
 module.exports = {

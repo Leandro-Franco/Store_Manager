@@ -15,7 +15,7 @@ describe('test services functions in sales', function () {
     sinon.restore();
   });
 
-  it('testing getAll function from products', async function () {
+  it('testing getAll function from sales', async function () {
     sinon.stub(salesModels, 'getAll').resolves(salesGetAllDB);
 
     const response = await salesService.getAll();
@@ -23,7 +23,7 @@ describe('test services functions in sales', function () {
     expect(response).to.be.an('object');
   });
 
-  it('testing findByID function from products', async function () {
+  it('testing findByID function from sales', async function () {
     sinon.stub(salesModels, 'findById').resolves(findByIdDB);
 
     const response = await salesService.findById(2);
@@ -33,7 +33,7 @@ describe('test services functions in sales', function () {
     expect(response.data[0].productId).to.be.equal(3);
   });
 
-  it('testing findByID function from products, with a wrong value', async function () {
+  it('testing findByID function from sales, with a wrong value', async function () {
     sinon.stub(salesModels, 'findById').resolves([]);
 
     const response = await salesService.findById(2);

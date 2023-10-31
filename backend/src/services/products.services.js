@@ -22,7 +22,7 @@ const updateProduct = async (name, id) => {
   const checkID = await findById(id);
   if (checkID.status === 'SUCCESSFULL') {
     const products = await productsModels.updateProduct(name, id);
-    return { status: 'CREATED', data: products };
+    return { status: 'SUCCESSFULL', data: products };
   }
   return { data: { message: 'Product not found' }, status: 'NOT_FOUND' };
 };

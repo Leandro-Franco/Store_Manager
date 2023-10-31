@@ -49,7 +49,7 @@ describe('test functions in service products', function () {
     const response = await servicesFunc.updateProduct('ProdutoX', 2);
   
     expect(response).to.be.an('object');
-    expect(response.status).to.be.equal('CREATED');
+    expect(response.status).to.be.equal('SUCCESSFULL');
     expect(response.data.name).to.be.equal('ProdutoX');
     expect(response.data.id).to.be.equal(2);
   });
