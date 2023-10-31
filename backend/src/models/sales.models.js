@@ -20,19 +20,19 @@ const getAll = async () => {
 const findById = async (id) => {
   const [sale] = await connection.execute(
     `SELECT 
-    sp.sale_id AS saleId,
     sl.date,
     sp.product_id AS productId,
     sp.quantity
     FROM
     StoreManager.sales_products AS sp
-    JOIN
+    INNER JOIN
     StoreManager.sales AS sl 
     ON sp.sale_id = sl.id
     WHERE id = ?
-    ORDER BY saleId, productId;`,
+    ORDER BY sp.sale_id, productId;`,
     [id],
   );
+  console.log(sale);
   return sale;
 };
 
@@ -46,7 +46,6 @@ const newSale = async (obj) => {
       ); 
   });
   Promise.all(saleProductData);
-  console.log(saleProductData);
   return { id: sale.insertId, intemsSold: obj };
 };
 

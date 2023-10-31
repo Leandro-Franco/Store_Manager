@@ -8,8 +8,8 @@ const getAll = async (_req, res) => {
 
 const findById = async (req, res) => {
   const { id } = req.params;
-  const { status, products } = await productsServices.findById(id);
-  return res.status(httpStatus(status)).json(products);
+  const { status, data } = await productsServices.findById(id);
+  return res.status(httpStatus(status)).json(data);
 };
 
 const newProduct = async (req, res) => {

@@ -14,3 +14,21 @@ app.use('/products', products);
 app.use('/sales', sales);
 
 module.exports = app;
+
+// const chai = require('chai');
+// const sinon = require('sinon');
+// const sinonChai = require('sinon-chai');
+
+// const { expect } = chai;
+
+// chai.use(sinonChai);
+
+// describe('', function () {
+//   afterEach(function () {
+//     sinon.restore();
+//   });
+
+//   it('', async function () {
+//     sinon.stub(valor, '');
+//   });
+// });

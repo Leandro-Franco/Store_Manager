@@ -8,8 +8,8 @@ const getAll = async (_req, res) => {
 
 const findById = async (req, res) => {
   const { id } = req.params;
-  const { status, sales } = await salesServices.findById(id);
-  return res.status(httpStatus(status)).json(sales);
+  const { status, data } = await salesServices.findById(id);
+  return res.status(httpStatus(status)).json(data);
 };
 
 const newSale = async (req, res) => {

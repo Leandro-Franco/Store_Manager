@@ -6,11 +6,11 @@ const getAll = async () => {
 };
 
 const findById = async (id) => {
-  const sales = await salesModels.findById(id);
-  if (!sales || sales.length === 0) {
+  const data = await salesModels.findById(id);
+  if (!data || data.length === 0) {
     return { status: 'NOT_FOUND', data: { message: 'Sale not found' } };
   }
-  return { status: 'SUCCESSFULL', sales };
+  return { status: 'SUCCESSFULL', data };
 };
 
 const newSale = async (obj) => {

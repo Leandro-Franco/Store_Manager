@@ -6,7 +6,7 @@ const { expect } = chai;
 
 const connection = require('../../../src/models/connection');
 const salesModels = require('../../../src/models/sales.models');
-const { getAllDB, findByIdDB } = require('../../mocks/model.sales.tes');
+const { getAllDB, findByIdDB } = require('../../mocks/model.sales.test');
 
 chai.use(sinonChai);
 

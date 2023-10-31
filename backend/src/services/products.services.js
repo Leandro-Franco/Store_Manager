@@ -6,11 +6,11 @@ const getAll = async () => {
 };
 
 const findById = async (id) => {
-  const products = await productsModels.findById(id);
-  if (!products) {
+  const data = await productsModels.findById(id);
+  if (data === undefined) {
     return { data: { message: 'Product not found' }, status: 'NOT_FOUND' };
   }
-  return { status: 'SUCCESSFULL', products };
+  return { status: 'SUCCESSFULL', data };
 };
 
 const newProduct = async (name) => {

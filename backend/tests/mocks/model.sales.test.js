@@ -23,7 +23,6 @@ const getAllDB = [
 const findByIdDB = [
   [
     {
-      saleId: 2,
       date: '2023-10-31T03:37:42.000Z',
       productId: 3,
       quantity: 15,
